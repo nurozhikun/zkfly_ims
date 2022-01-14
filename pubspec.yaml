@@ -12,6 +12,8 @@ dependencies:
     sdk: flutter
   zkfly:
     path: ../zkfly
+  dio: ^4.0.3
+  protobuf: ^2.0.0
 
 dev_dependencies:
   flutter_test:
