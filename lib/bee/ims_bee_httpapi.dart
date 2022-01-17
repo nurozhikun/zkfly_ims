@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:zkfly/zkfly.dart';
-import 'ims_bee_httpdio.dart';
+import 'package:zkfly_ims/pbf/index.dart';
 import 'package:dio/dio.dart';
 
 class ImsBeeHttpApi extends ZkGetxHttpApi with ImsBeeHttpDio {
