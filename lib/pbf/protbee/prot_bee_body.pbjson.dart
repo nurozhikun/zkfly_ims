@@ -8,28 +8,30 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-@$core.Deprecated('Use loginDescriptor instead')
-const Login$json = const {
-  '1': 'Login',
+@$core.Deprecated('Use userReqDescriptor instead')
+const UserReq$json = const {
+  '1': 'UserReq',
   '2': const [
     const {'1': 'user', '3': 1, '4': 1, '5': 9, '10': 'user'},
     const {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
   ],
 };
 
-/// Descriptor for `Login`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List loginDescriptor = $convert.base64Decode('CgVMb2dpbhISCgR1c2VyGAEgASgJUgR1c2VyEhoKCHBhc3N3b3JkGAIgASgJUghwYXNzd29yZA==');
-@$core.Deprecated('Use loginAckDescriptor instead')
-const LoginAck$json = const {
-  '1': 'LoginAck',
+/// Descriptor for `UserReq`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userReqDescriptor = $convert.base64Decode('CgdVc2VyUmVxEhIKBHVzZXIYASABKAlSBHVzZXISGgoIcGFzc3dvcmQYAiABKAlSCHBhc3N3b3Jk');
+@$core.Deprecated('Use userResDescriptor instead')
+const UserRes$json = const {
+  '1': 'UserRes',
   '2': const [
     const {'1': 'user', '3': 1, '4': 1, '5': 9, '10': 'user'},
+    const {'1': 'jwt', '3': 2, '4': 1, '5': 9, '10': 'jwt'},
     const {'1': 'permissions', '3': 3, '4': 3, '5': 9, '10': 'permissions'},
+    const {'1': 'tel', '3': 4, '4': 1, '5': 9, '10': 'tel'},
   ],
 };
 
-/// Descriptor for `LoginAck`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List loginAckDescriptor = $convert.base64Decode('CghMb2dpbkFjaxISCgR1c2VyGAEgASgJUgR1c2VyEiAKC3Blcm1pc3Npb25zGAMgAygJUgtwZXJtaXNzaW9ucw==');
+/// Descriptor for `UserRes`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List userResDescriptor = $convert.base64Decode('CgdVc2VyUmVzEhIKBHVzZXIYASABKAlSBHVzZXISEAoDand0GAIgASgJUgNqd3QSIAoLcGVybWlzc2lvbnMYAyADKAlSC3Blcm1pc3Npb25zEhAKA3RlbBgEIAEoCVIDdGVs');
 @$core.Deprecated('Use thumbnailDescriptor instead')
 const Thumbnail$json = const {
   '1': 'Thumbnail',

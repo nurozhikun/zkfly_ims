@@ -9,15 +9,15 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class Login extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Login', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protbee'), createEmptyInstance: create)
+class UserReq extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserReq', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protbee'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..hasRequiredFields = false
   ;
 
-  Login._() : super();
-  factory Login({
+  UserReq._() : super();
+  factory UserReq({
     $core.String? user,
     $core.String? password,
   }) {
@@ -30,26 +30,26 @@ class Login extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory Login.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Login.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory UserReq.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserReq.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  Login clone() => Login()..mergeFromMessage(this);
+  UserReq clone() => UserReq()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Login copyWith(void Function(Login) updates) => super.copyWith((message) => updates(message as Login)) as Login; // ignore: deprecated_member_use
+  UserReq copyWith(void Function(UserReq) updates) => super.copyWith((message) => updates(message as UserReq)) as UserReq; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static Login create() => Login._();
-  Login createEmptyInstance() => create();
-  static $pb.PbList<Login> createRepeated() => $pb.PbList<Login>();
+  static UserReq create() => UserReq._();
+  UserReq createEmptyInstance() => create();
+  static $pb.PbList<UserReq> createRepeated() => $pb.PbList<UserReq>();
   @$core.pragma('dart2js:noInline')
-  static Login getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Login>(create);
-  static Login? _defaultInstance;
+  static UserReq getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserReq>(create);
+  static UserReq? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get user => $_getSZ(0);
@@ -70,47 +70,57 @@ class Login extends $pb.GeneratedMessage {
   void clearPassword() => clearField(2);
 }
 
-class LoginAck extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LoginAck', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protbee'), createEmptyInstance: create)
+class UserRes extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRes', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'protbee'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'user')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'jwt')
     ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'permissions')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tel')
     ..hasRequiredFields = false
   ;
 
-  LoginAck._() : super();
-  factory LoginAck({
+  UserRes._() : super();
+  factory UserRes({
     $core.String? user,
+    $core.String? jwt,
     $core.Iterable<$core.String>? permissions,
+    $core.String? tel,
   }) {
     final _result = create();
     if (user != null) {
       _result.user = user;
     }
+    if (jwt != null) {
+      _result.jwt = jwt;
+    }
     if (permissions != null) {
       _result.permissions.addAll(permissions);
     }
+    if (tel != null) {
+      _result.tel = tel;
+    }
     return _result;
   }
-  factory LoginAck.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory LoginAck.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory UserRes.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UserRes.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  LoginAck clone() => LoginAck()..mergeFromMessage(this);
+  UserRes clone() => UserRes()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  LoginAck copyWith(void Function(LoginAck) updates) => super.copyWith((message) => updates(message as LoginAck)) as LoginAck; // ignore: deprecated_member_use
+  UserRes copyWith(void Function(UserRes) updates) => super.copyWith((message) => updates(message as UserRes)) as UserRes; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
-  static LoginAck create() => LoginAck._();
-  LoginAck createEmptyInstance() => create();
-  static $pb.PbList<LoginAck> createRepeated() => $pb.PbList<LoginAck>();
+  static UserRes create() => UserRes._();
+  UserRes createEmptyInstance() => create();
+  static $pb.PbList<UserRes> createRepeated() => $pb.PbList<UserRes>();
   @$core.pragma('dart2js:noInline')
-  static LoginAck getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LoginAck>(create);
-  static LoginAck? _defaultInstance;
+  static UserRes getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UserRes>(create);
+  static UserRes? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get user => $_getSZ(0);
@@ -121,8 +131,26 @@ class LoginAck extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearUser() => clearField(1);
 
+  @$pb.TagNumber(2)
+  $core.String get jwt => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set jwt($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasJwt() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearJwt() => clearField(2);
+
   @$pb.TagNumber(3)
-  $core.List<$core.String> get permissions => $_getList(1);
+  $core.List<$core.String> get permissions => $_getList(2);
+
+  @$pb.TagNumber(4)
+  $core.String get tel => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set tel($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasTel() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearTel() => clearField(4);
 }
 
 class Thumbnail extends $pb.GeneratedMessage {

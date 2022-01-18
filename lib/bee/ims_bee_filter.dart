@@ -2,8 +2,9 @@ import 'package:zkfly/zkfly.dart';
 import 'package:zkfly_ims/pbf/index.dart' as $bee;
 import 'package:zkfly_ims/net/index.dart';
 import 'index.dart';
+import 'ims_bee_actions.dart';
 
-class ImsBeeFilter extends ZkGetxFilter {
+class ImsBeeFilter extends ZkGetxFilter with ImsBeeAction {
   ImsBeeFilter() : super() {
     _initBeeActions();
   }
@@ -17,22 +18,6 @@ class ImsBeeFilter extends ZkGetxFilter {
   // }
 
   void _initBeeActions() {
-    actionOf(ZkValueKey.keyLogin).insertOnPressLogin(_login);
-  }
-
-  void _login(String username, String password) {
-    // var h = $bee.beeHeader();
-    ImsBeeHttpApi.to.post(
-      ImsFlyCmd.cmdAuthLogin,
-      // $bee.beeHeader(jwt: ImsBeeApp.to.user?.jwt),
-      ImsBeeApp.to.httpHeader(),
-      inBody: $bee.Login(user: username, password: password),
-      outBody: $bee.LoginAck(),
-      callback: (h, resBody) {
-        if (resBody is $bee.LoginAck) {
-          //TODO
-        }
-      },
-    );
+    actionOf(ZkValueKey.keyLogin).insertOnPressLogin(reqLogin);
   }
 }
