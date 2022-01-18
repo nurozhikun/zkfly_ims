@@ -15,8 +15,8 @@ class ImsBeeApp extends ZkGetxApp {
   @override
   Future<void> init() async {
     await super.init();
-    user = ImsUser.fromJson(
-        jsonDecode(ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value)));
+    // user = ImsUser.fromJson(
+    //     jsonDecode(ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value)));
   }
 
   Future<void> putHttpApi() async {}
