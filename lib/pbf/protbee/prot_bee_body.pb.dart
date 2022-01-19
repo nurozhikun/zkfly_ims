@@ -7,6 +7,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class UserReq extends $pb.GeneratedMessage {
@@ -76,6 +77,7 @@ class UserRes extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'jwt')
     ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'permissions')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tel')
+    ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiredTime')
     ..hasRequiredFields = false
   ;
 
@@ -85,6 +87,7 @@ class UserRes extends $pb.GeneratedMessage {
     $core.String? jwt,
     $core.Iterable<$core.String>? permissions,
     $core.String? tel,
+    $fixnum.Int64? expiredTime,
   }) {
     final _result = create();
     if (user != null) {
@@ -98,6 +101,9 @@ class UserRes extends $pb.GeneratedMessage {
     }
     if (tel != null) {
       _result.tel = tel;
+    }
+    if (expiredTime != null) {
+      _result.expiredTime = expiredTime;
     }
     return _result;
   }
@@ -151,6 +157,15 @@ class UserRes extends $pb.GeneratedMessage {
   $core.bool hasTel() => $_has(3);
   @$pb.TagNumber(4)
   void clearTel() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $fixnum.Int64 get expiredTime => $_getI64(4);
+  @$pb.TagNumber(5)
+  set expiredTime($fixnum.Int64 v) { $_setInt64(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasExpiredTime() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExpiredTime() => clearField(5);
 }
 
 class Thumbnail extends $pb.GeneratedMessage {

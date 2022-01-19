@@ -27,11 +27,12 @@ const UserRes$json = const {
     const {'1': 'jwt', '3': 2, '4': 1, '5': 9, '10': 'jwt'},
     const {'1': 'permissions', '3': 3, '4': 3, '5': 9, '10': 'permissions'},
     const {'1': 'tel', '3': 4, '4': 1, '5': 9, '10': 'tel'},
+    const {'1': 'expired_time', '3': 5, '4': 1, '5': 3, '10': 'expiredTime'},
   ],
 };
 
 /// Descriptor for `UserRes`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userResDescriptor = $convert.base64Decode('CgdVc2VyUmVzEhIKBHVzZXIYASABKAlSBHVzZXISEAoDand0GAIgASgJUgNqd3QSIAoLcGVybWlzc2lvbnMYAyADKAlSC3Blcm1pc3Npb25zEhAKA3RlbBgEIAEoCVIDdGVs');
+final $typed_data.Uint8List userResDescriptor = $convert.base64Decode('CgdVc2VyUmVzEhIKBHVzZXIYASABKAlSBHVzZXISEAoDand0GAIgASgJUgNqd3QSIAoLcGVybWlzc2lvbnMYAyADKAlSC3Blcm1pc3Npb25zEhAKA3RlbBgEIAEoCVIDdGVsEiEKDGV4cGlyZWRfdGltZRgFIAEoA1ILZXhwaXJlZFRpbWU=');
 @$core.Deprecated('Use thumbnailDescriptor instead')
 const Thumbnail$json = const {
   '1': 'Thumbnail',

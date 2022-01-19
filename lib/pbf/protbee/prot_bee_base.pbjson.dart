@@ -47,14 +47,3 @@ const Header$json = const {
 
 /// Descriptor for `Header`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List headerDescriptor = $convert.base64Decode('CgZIZWFkZXISEAoDY21kGAEgASgDUgNjbWQSHAoJdGltZXN0YW1wGAIgASgDUgl0aW1lc3RhbXASEAoDand0GAMgASgJUgNqd3QSEgoEY29kZRgEIAEoA1IEY29kZRIUCgVlcnJvchgFIAEoCVIFZXJyb3ISHQoKYm9keV90b3RhbBgGIAEoA1IJYm9keVRvdGFsEhkKCGJvZHlfaWR4GAcgASgDUgdib2R5SWR4');
-@$core.Deprecated('Use tailerDescriptor instead')
-const Tailer$json = const {
-  '1': 'Tailer',
-  '2': const [
-    const {'1': 'code', '3': 1, '4': 1, '5': 3, '10': 'code'},
-    const {'1': 'error', '3': 2, '4': 1, '5': 9, '10': 'error'},
-  ],
-};
-
-/// Descriptor for `Tailer`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List tailerDescriptor = $convert.base64Decode('CgZUYWlsZXISEgoEY29kZRgBIAEoA1IEY29kZRIUCgVlcnJvchgCIAEoCVIFZXJyb3I=');
