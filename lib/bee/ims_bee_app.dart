@@ -14,7 +14,6 @@ class ImsBeeApp extends ZkGetxApp {
   //can be override
   @override
   Future<void> init() async {
-    print("init in ImsBeeApp");
     await super.init();
     try {
       user = $bee.UserRes.fromJson(
