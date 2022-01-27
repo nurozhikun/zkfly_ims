@@ -1,5 +1,7 @@
 // import 'dart:convert';
 
+import 'dart:convert';
+
 import 'package:get/get.dart';
 import 'package:zkfly/zkfly.dart';
 import 'package:zkfly_ims/pbf/index.dart' as $bee;
@@ -22,6 +24,8 @@ class ImsBeeApp extends ZkGetxApp {
           shared.getString(ImsBeeKey.keyAppCfg.value));
     } catch (_) {}
     //init user
+    print(jsonDecode(
+        ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value))['user']);
     try {
       user = $bee.UserRes.fromJson(
           ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value));
