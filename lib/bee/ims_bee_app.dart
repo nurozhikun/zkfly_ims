@@ -17,11 +17,12 @@ class ImsBeeApp extends ZkGetxApp {
   @override
   Future<void> init() async {
     await super.init();
-    print(jsonDecode(
-        ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value))['user']);
     try {
+      print(
+          jsonDecode(ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value)));
       user = $bee.UserRes.fromJson(
           ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value));
+      print(user);
     } catch (_) {}
   }
 
