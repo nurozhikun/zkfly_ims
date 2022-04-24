@@ -24,8 +24,8 @@ class ImsBeeApp extends ZkGetxApp {
           shared.getString(ImsBeeKey.keyAppCfg.value));
     } catch (_) {}
     //init user
-    print(jsonDecode(
-        ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value))['user']);
+    // print(jsonDecode(
+    //     ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value))['user']);
     try {
       user = $bee.UserRes.fromJson(
           ZkGetxStorage.to.getString(ZkValueKey.keyUsername.value));
