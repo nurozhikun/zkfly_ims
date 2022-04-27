@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:zkfly/zkfly.dart';
 import 'package:zkfly_ims/bee/index.dart';
 
+mixin ImsBeeSettingFilter {
+  Widget labelOfImsAddr() {
+    return const Text("ims_address");
+  }
+
+  void saveImsAddr(String addr) {}
+  String imsAddrFromStorage() {
+    return "127.0.0.1:8000";
+  }
+}
+
 class SettingAddrWidget extends StatefulWidget {
   const SettingAddrWidget({Key? key, required this.controller})
       : super(key: key);
@@ -12,9 +23,12 @@ class SettingAddrWidget extends StatefulWidget {
 
 class _SettingAddrWidgetState extends State<SettingAddrWidget> {
   final TextEditingController _ctrlImsAddr = TextEditingController();
+  bool _isEditingIms = false;
+  String _hintImsAddr = "";
   @override
   void initState() {
     super.initState();
+    _hintImsAddr = widget.controller.imsAddrFromStorage();
   }
 
   @override
@@ -35,7 +49,7 @@ class _SettingAddrWidgetState extends State<SettingAddrWidget> {
 
   List<Widget> _imsSetting() {
     return <Widget>[
-      const Text("ims_address"),
+      widget.controller.labelOfImsAddr(),
       Container(
         height: 36,
         color: Colors.grey[400],
@@ -48,17 +62,32 @@ class _SettingAddrWidgetState extends State<SettingAddrWidget> {
               width: 200,
               child: TextFormField(
                 controller: _ctrlImsAddr,
-                decoration: const InputDecoration(hintText: "127.0.0.1:8080"),
+                decoration: InputDecoration(hintText: _hintImsAddr),
+                onChanged: (str) {
+                  if (!_isEditingIms && str.split('.').length > 3) {
+                    setState(() => _isEditingIms = true);
+                  }
+                },
               ),
             ),
-            const ElevatedButton(
-              onPressed: null,
-              child: Text("save"),
+            ElevatedButton(
+              child: const Text("save"),
+              onPressed: _isEditingIms ? _saveImsAddr : null,
             ),
           ],
         ),
       ),
     ];
+  }
+
+  void _saveImsAddr() {
+    if (_ctrlImsAddr.text.length > 6 &&
+        _ctrlImsAddr.text.split('.').length > 3) {
+      _hintImsAddr = _ctrlImsAddr.text;
+      widget.controller.saveImsAddr(_hintImsAddr);
+      _ctrlImsAddr.text = "";
+    }
+    setState(() => _isEditingIms = false);
   }
 
   List<Widget> _rcsSetting() {

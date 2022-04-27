@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:zkfly/zkfly.dart';
 import 'index.dart';
@@ -5,7 +6,7 @@ import 'index.dart';
 // import 'package:zkfly_ims/net/index.dart';
 // import 'ims_bee_actions.dart';
 
-class ImsBeeFilter extends ZkGetxFilter with ImsBeeAction {
+class ImsBeeFilter extends ZkGetxFilter with ImsBeeSettingFilter, ImsBeeAction {
   ImsBeeFilter() : super() {
     Get.put<ImsBeeFilter>(this, permanent: true);
     _initBeeActions();
@@ -24,5 +25,10 @@ class ImsBeeFilter extends ZkGetxFilter with ImsBeeAction {
   //   // print(UserModel.singleton.getUserInfo());
   //   return 0;
   // }
-
+  @mustCallSuper
+  @override
+  void saveImsAddr(String addr) {
+    // super.saveImsAddr(addr);
+    ZkGetxStorage.to.setString("skey_ims_addr", addr);
+  }
 }

@@ -3,7 +3,9 @@ import 'package:zkfly/zkfly.dart';
 import 'package:zkfly_ims/bee/ims_bee_filter.dart';
 import 'package:get/get.dart';
 
-class ImsBeeAppBarMain extends ZkGetfindView<ImsBeeFilter>
+// mixin ImsBeeAppBarMainFilter {}
+
+class ImsBeeAppBarMain<T extends ImsBeeFilter> extends ZkGetfindView<T>
     with ZkValueKeyMixin
     implements PreferredSizeWidget {
   ImsBeeAppBarMain({Key? key}) : super(key: key);
@@ -12,11 +14,15 @@ class ImsBeeAppBarMain extends ZkGetfindView<ImsBeeFilter>
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text("home".tr),
+      title: buildTitle(),
       centerTitle: true,
       leading: buildLeading(context),
       actions: buildActions(context),
     );
+  }
+
+  Widget buildTitle() {
+    return Text("home".tr);
   }
 
   Widget? buildLeading(context) {
@@ -31,9 +37,10 @@ class ImsBeeAppBarMain extends ZkGetfindView<ImsBeeFilter>
             onPressed: () => controller.onPressed(ZkValueKey.keySetting),
           ),
         ),
-        const Text(
-          'setting',
-          style: TextStyle(fontSize: 10),
+        Text(
+          // 'setting'.tr,
+          ZkValueKey.keySetting.value.tr,
+          style: const TextStyle(fontSize: 10),
         ),
       ],
     );
