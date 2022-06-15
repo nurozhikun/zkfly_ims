@@ -10,12 +10,12 @@ class ImsBeeAppBarMain<T extends ImsBeeFilter> extends ZkGetfindView<T>
     implements PreferredSizeWidget {
   ImsBeeAppBarMain({Key? key}) : super(key: key);
   @override
-  Size get preferredSize => const Size.fromHeight(60.0);
+  Size get preferredSize => const Size.fromHeight(50.0);
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: buildTitle(),
-      centerTitle: true,
+      // centerTitle: true,
       leading: buildLeading(context),
       actions: buildActions(context),
     );
@@ -25,14 +25,17 @@ class ImsBeeAppBarMain<T extends ImsBeeFilter> extends ZkGetfindView<T>
     return Text("home".tr);
   }
 
-  Widget? buildLeading(context) {
+  Widget? buildLeading(BuildContext context) {
     return Column(
       children: [
         SizedBox(
           width: 40,
-          height: 40,
+          height: 32,
           child: IconButton(
-            icon: const Icon(Icons.settings, size: 24.0),
+            icon: const Icon(
+              Icons.settings,
+              size: 18.0,
+            ),
             padding: const EdgeInsets.fromLTRB(0, 10, 0, 2),
             onPressed: () => controller.onPressed(ZkValueKey.keySetting),
           ),
@@ -46,7 +49,7 @@ class ImsBeeAppBarMain<T extends ImsBeeFilter> extends ZkGetfindView<T>
     );
   }
 
-  List<Widget> buildActions(context) {
+  List<Widget> buildActions(BuildContext context) {
     return [
       Container(
         width: 60,
@@ -64,7 +67,7 @@ class ImsBeeAppBarMain<T extends ImsBeeFilter> extends ZkGetfindView<T>
               ),
             ],
           ),
-          iconSize: 24,
+          iconSize: 18,
           splashRadius: 20,
           onPressed: () => controller.onPressed(ZkValueKey.keyAdmin),
         ),
